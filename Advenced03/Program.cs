@@ -132,10 +132,60 @@
                 Console.Write(name + " ");
             }
 
+            Console.WriteLine();
 
 
 
+            #endregion
 
+            #region Exercise04
+
+            HashSet<string> emails = new HashSet<string>(StringComparer.OrdinalIgnoreCase);
+            emails.Add("ahmed@test.com");
+            emails.Add("AHMED@test.com");
+            emails.Add("sara@test.com");
+            emails.Add("Sara@Test.Com");
+
+            Console.WriteLine(emails.Count);
+            //the actually stored is 2 because hashset stores unique elements
+
+            HashSet<int> setA = new HashSet<int>
+            {
+                1, 2, 3, 4, 5
+            };
+
+            HashSet<int> setB = new HashSet<int>
+            {
+                4, 5, 6, 7, 8
+            };
+
+            HashSet<int> union = new HashSet<int>(setA);
+            union.UnionWith(setB);
+            foreach (int x in union)
+            {
+                Console.WriteLine(x);
+            }
+
+            HashSet<int> intersection = new HashSet<int>(setA);
+            intersection.IntersectWith(setB);
+
+            foreach (int x in intersection)
+            {
+                Console.WriteLine(x);
+            }
+
+            HashSet<int> difference = new HashSet<int>(setA);
+            difference.ExceptWith(setB);
+
+            foreach (int x in difference)
+            {
+                Console.WriteLine(x);
+
+            }
+
+            HashSet<int> check = new HashSet<int> { 1, 2 };
+
+            Console.WriteLine( check.IsSubsetOf(setA));
             #endregion
         }
     }
