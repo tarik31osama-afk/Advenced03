@@ -62,6 +62,36 @@
 
             #endregion
 
+            #region Exercise02 
+            SortedDictionary<int, string> players = new SortedDictionary<int, string>();
+            
+            players.Add(500, "Ahmed");
+            players.Add(200, "Sara");
+            players.Add(800, "Ali");
+            players.Add(350, "Mona");
+
+            foreach(var item in players)
+            {
+                Console.WriteLine(item);
+            }
+
+            Console.WriteLine(players.First().Key);
+            Console.WriteLine(players.First().Value);
+
+            Console.WriteLine(players.ContainsKey(500));
+
+            Console.WriteLine( players.TryGetValue(999,out string value));
+
+            players.Remove(200);
+
+            foreach (var item in players)
+            {
+                Console.WriteLine(item);
+            }
+
+
+            #endregion
+
         }
     }
 }
