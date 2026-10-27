@@ -186,7 +186,7 @@
             HashSet<int> check = new HashSet<int> { 1, 2 };
 
             Console.WriteLine( check.IsSubsetOf(setA));
-            #endregion
+            #endregion 
         }
     }
 }
