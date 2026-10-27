@@ -217,7 +217,35 @@
             bool result = documents.TryDequeue(out string? val);
             Console.WriteLine(result);
 
-           
+
+            #endregion
+
+            #region Exercise06
+            Stack<string> history = new Stack<string>();
+
+            history.Push("google.com");
+            history.Push("github.com");
+            history.Push("stackoverflow.com");
+            history.Push("youtube.com");
+            history.Push("claude.ai");
+
+            Console.WriteLine(history.Peek() );
+
+            for (int i = 0; i < 3; i++)
+            {
+                Console.WriteLine(history.Pop()); 
+            }
+            
+            Console.WriteLine(history.Peek());
+
+            while (history.Count > 0)
+            {
+                history.Pop();
+            }
+
+            Console.WriteLine(history.TryPop(out string page));
+
+
             #endregion
         }
     }
