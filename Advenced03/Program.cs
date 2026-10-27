@@ -186,7 +186,39 @@
             HashSet<int> check = new HashSet<int> { 1, 2 };
 
             Console.WriteLine( check.IsSubsetOf(setA));
-            #endregion 
+            #endregion
+
+            #region Exercise05
+
+            Queue<string> documents = new Queue<string>();
+            documents.Enqueue("Report.pdf");
+            documents.Enqueue("Invoice.pdf");
+            documents.Enqueue("Letter.docx");
+            documents.Enqueue("Resume.pdf");
+            documents.Enqueue("Photo.jpg");
+
+
+            foreach (string document in documents)
+            {
+                Console.WriteLine(document);
+            }
+
+            Console.WriteLine(documents.Count);
+
+            Console.WriteLine(documents.Peek());
+
+
+
+            while (documents.Count > 0)
+            {
+                Console.WriteLine("Printing: " + documents.Dequeue());
+            }
+
+            bool result = documents.TryDequeue(out string? val);
+            Console.WriteLine(result);
+
+           
+            #endregion
         }
     }
 }
